@@ -13,6 +13,7 @@ jobs:
         with: { channel: stable }
       - name: Crea la parte Android
         run: flutter create --platforms=android --project-name=inbox_shield --org=it.luigi .
+      - run: rm -rf test
       - run: python3 tools/prepara_android.py
       - run: flutter pub get
       - run: flutter analyze --no-fatal-infos --no-fatal-warnings
